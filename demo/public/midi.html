@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADBeeper</title>
+  
+  <!--   Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!--   My CSS -->
+  <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+  <link href="midi.css" rel="stylesheet" type="text/css" />
+  <script src="../node_modules/xterm/lib/xterm.js"></script>
+</head>
+
+<body>
+  
+  <nav class="navbar bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">ADBeeper</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row align-items-start">
+    
+      <div class="col-8">
+        
+        <div class="terminal-nav">
+          <h3 id="console-title">Console</h3>
+          <!--  Buttons  -->
+          <span class="buttons">
+            <button id="connect" class="button btn btn-success">Connect</button>
+            <button id="disconnect" class="button btn btn-danger" disabled>Disconnect</button>
+            <button id="sweep" class="button btn btn-secondary" disabled>Sweep Test</button>
+            <button id="test" class="button btn btn-secondary" style="display:none;">Test</button>
+          </span>
+        </div>
+        
+        <div id="console-container"></div>
+
+        <div>
+          USB MIDI Device: <span class="midi-device-status badge text-bg-danger">Unavailable</span>
+        </div>
+
+        <div>
+          ADB Device: <span class="adb-device-status badge text-bg-danger">Unavailable</span>
+        </div>
+        
+      </div>
+      
+      <div class="col-4">
+
+        <h4>Upload MIDI File</h4>
+        <div id="FileDrop">
+          <div id="Text">
+            Drop a midi file (or click) here.
+          </div>
+          <input type="file" accept="audio/midi" />
+        </div>
+        <button id="beep" class="button btn btn-secondary" disabled>Play on KPOP</button>
+
+        <h4>MIDI File Preview</h4>
+        <midi-visualizer
+          id="midi-viz"
+          type="piano-roll"
+          src="https://cdn.jsdelivr.net/gh/cifkao/html-midi-player@2b12128/twinkle_twinkle.mid">
+        </midi-visualizer>
+        
+        <midi-player
+          id="midi-play"
+          src="https://cdn.jsdelivr.net/gh/cifkao/html-midi-player@2b12128/twinkle_twinkle.mid"
+          sound-font visualizer="#midi-viz">
+        </midi-player>
+        
+        <div id="Results">
+          <textarea id="ResultsText" placeholder="json output..."></textarea>
+        </div>
+        <span id="midi-parsing-status"></span>
+        <span id="midi-parsing-data"></span>
+        
+      </div>
+    </div>
+  </div>
+  
+    <code id="output">
+    </code>
+    <input id="input" type="text"></input>
+
+
+  <script type="text/javascript">
+  </script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+<!--   <script type="text/javascript" src="https://unpkg.com/tone@latest/build/Tone.js"></script> -->
+<!--   <script type="text/javascript" src="https://unpkg.com/@tonejs/ui@0.0.8/build/tonejs-ui.js"></script> -->
+  <script type="text/javascript" src="https://unpkg.com/@tonejs/midi"></script>
+<!--   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/webmidi@3.0.23/dist/iife/webmidi.iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="js/midi.bundle.js" defer></script>
+  <script src="midi-parser.js"></script>
+
+</body>
+
+</html>

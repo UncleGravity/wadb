@@ -8,12 +8,13 @@
     "lint": "tslint \"src/**/*.ts\"",
     "lint-fix": "tslint \"src/**/*.ts\" --fix",
     "build": "tsc",
-    "package": "webpack && workbox generateSW",
+    "package": "webpack -d --mode development && workbox generateSW",
     "serve": "serve"
   },
   "author": "André Cipriani Bandarra",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@types/jquery": "^3.5.16",
     "serve": "^11.3.2",
     "ts-loader": "^7.0.0",
     "tslint": "^6.0.0",
@@ -23,6 +24,10 @@
     "workbox-cli": "^5.1.4"
   },
   "dependencies": {
-    "wadb": "file:../"
+    "jquery": "^3.6.3",
+    "wadb": "file:../",
+    "webmidi": "^3.1.2",
+    "xterm": "^5.1.0",
+    "xterm-addon-fit": "^0.7.0"
   }
 }

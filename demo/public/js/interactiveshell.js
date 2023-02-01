@@ -93,9 +93,16 @@ input.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         e.preventDefault();
         sendCommand(input.value);
-        input.value = '';
+        input.value = 'balls';
         return false;
     }
     return true;
 });
+// AV CODE
+const beepButton = document.querySelector('#beep');
+beepButton.addEventListener('click', (e) => __awaiter(void 0, void 0, void 0, function* () {
+    sendCommand("/data/user/me/beep.sh");
+    input.value = 'balls';
+    return true;
+}));
 //# sourceMappingURL=interactiveshell.js.map

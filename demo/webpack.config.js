@@ -20,7 +20,8 @@ module.exports = {
   entry: {
     screenrecord: './src/screenrecord.ts',
     interactiveshell: './src/interactiveshell.ts',
-    livestream: './src/livestream.ts'
+    livestream: './src/livestream.ts',
+    midi: './src/midi.ts'
   },
   module: {
     rules: [
@@ -32,7 +33,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'js/[name].bundle.js',

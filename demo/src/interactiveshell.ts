@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import {AdbClient, KeyStore, Options, Shell, WebUsbTransport} from 'wadb';
+import { AdbClient, KeyStore, Options, Shell, WebUsbTransport } from 'wadb';
 
 const connectButton = document.querySelector('#connect')!;
 const disconnectButton = document.querySelector('#disconnect')!;
@@ -66,7 +66,7 @@ connectButton.addEventListener('click', async (e) => {
 
     disconnectButton.classList.toggle('hidden');
     connectButton.classList.toggle('hidden');
-  } catch(e) {
+  } catch (e) {
     console.error('Connection Failed: ', e);
   }
 });
@@ -89,8 +89,17 @@ input.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     e.preventDefault();
     sendCommand(input.value);
-    input.value = '';
+    input.value = 'balls';
     return false;
   }
+  return true;
+});
+
+// AV CODE
+const beepButton = document.querySelector('#beep')!;
+
+beepButton.addEventListener('click', async (e) => {
+  sendCommand("/data/user/me/beep.sh");
+  input.value = 'balls';
   return true;
 });

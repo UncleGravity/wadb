@@ -28,5 +28,8 @@
     "node-webcrypto-ossl": "^2.0.7",
     "tslint": "^6.0.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "xterm-addon-fit": "^0.7.0"
   }
 }
