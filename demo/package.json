@@ -9,7 +9,7 @@
     "lint-fix": "tslint \"src/**/*.ts\" --fix",
     "build": "tsc",
     "package": "webpack -d --mode development && workbox generateSW",
-    "serve": "serve",
+    "serve": "serve ./public/",
     "dev": "npm run build; npm run package && npm run serve"
   },
   "author": "André Cipriani Bandarra",
