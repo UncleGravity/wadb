@@ -28,7 +28,7 @@ const terminalDiv = document.querySelector('#console-container');
 //////////////////////////////////////
 // Terminal
 //
-var term = new Terminal({
+const term = new Terminal({
 // rows: 50
 });
 const fitAddon = new FitAddon();
@@ -36,7 +36,7 @@ term.loadAddon(fitAddon);
 fitAddon.fit();
 term.open(terminalDiv);
 term.write('Plug in device and click "Connect" button...');
-var curr_line = "";
+let curr_line = "";
 function clearTerminalInput() {
     // Remove curent input. It gets sent back by ADB.
     for (let i = 0; i < curr_line.length; i++) {

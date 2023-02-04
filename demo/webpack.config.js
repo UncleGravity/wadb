@@ -18,9 +18,9 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    screenrecord: './src/screenrecord.ts',
-    interactiveshell: './src/interactiveshell.ts',
-    livestream: './src/livestream.ts',
+    // screenrecord: './src/screenrecord.ts',
+    // interactiveshell: './src/interactiveshell.ts',
+    // livestream: './src/livestream.ts',
     midi: './src/midi.ts'
   },
   module: {
