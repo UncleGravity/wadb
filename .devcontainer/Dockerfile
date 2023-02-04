@@ -33,7 +33,7 @@ RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
 # nvm install 16.19.0
 
 # Step 3: Symlink workspaces folder
-from ~/ -> ln -s /workspaces/ workspaces
+# from ~/ -> ln -s /workspaces/ workspaces
 
 WORKDIR /workspaces/wadb
 RUN npm install && npm run build
