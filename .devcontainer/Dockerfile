@@ -35,10 +35,10 @@ RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
 # Step 3: Symlink workspaces folder
 # from ~/ -> ln -s /workspaces/ workspaces
 
-WORKDIR /workspaces/wadb
-RUN npm install && npm run build
-WORKDIR /workspaces/wadb/demo
-RUN npm install
+# WORKDIR /workspaces/wadb
+# RUN npm install && npm run build
+# WORKDIR /workspaces/wadb/demo
+# RUN npm install
 
 # from wadb -> npm install
 # from wadb -> npm run build
