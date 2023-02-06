@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "clean": "rm -rf node_modules/",
     "lint": "tslint \"src/**/*.ts\"",
     "lint-fix": "tslint \"src/**/*.ts\" --fix",
     "build": "tsc",

@@ -1,10 +1,11 @@
 {
   "name": "@vieratech/wadb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This project is a TypeScript implementation of the Android Debug Bridge(ADB) protocol over WebUSB. The implementation inspired on the [webadb.js][1], with the main difference being that implementation supports multiple concurrent streams.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "clean": "rm -rf node_modules/ dist/",
     "lint": "eslint \"src/**/*.ts\"",
     "lint-fix": "eslint \"src/**/*.ts\" --fix",
     "build": "tsc -p .",
@@ -17,10 +18,12 @@
   ],
   "author": "André Cipriani Bandarra",
   "license": "Apache-2.0",
+  "dependencies": {
+    "@types/w3c-web-usb": "^1.0.4"
+  },
   "devDependencies": {
     "@types/jasmine": "^3.5.10",
     "@types/node": "^13.13.2",
-    "@types/w3c-web-usb": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
     "eslint": "^6.8.0",
