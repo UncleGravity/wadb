@@ -1,7 +1,7 @@
 {
-  "name": "wadb",
+  "name": "@vieratech/wadb",
   "version": "0.1.0",
-  "description": "",
+  "description": "This project is a TypeScript implementation of the Android Debug Bridge(ADB) protocol over WebUSB. The implementation inspired on the [webadb.js][1], with the main difference being that implementation supports multiple concurrent streams.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -29,7 +29,12 @@
     "tslint": "^6.0.0",
     "typescript": "^3.8.3"
   },
-  "dependencies": {
-    "xterm-addon-fit": "^0.7.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UncleGravity/wadb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UncleGravity/wadb/issues"
+  },
+  "homepage": "https://github.com/UncleGravity/wadb#readme"
 }
