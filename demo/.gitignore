@@ -1,3 +1,8 @@
+.DS_Store
+public/js/midi.*
+public/sw.js*
+public/workbox-*
+
 # Logs
 logs
 *.log

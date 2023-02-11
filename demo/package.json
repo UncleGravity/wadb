@@ -26,9 +26,10 @@
     "workbox-cli": "^5.1.4"
   },
   "dependencies": {
+    "@types/webmidi": "^2.0.6",
     "jquery": "^3.6.3",
     "wadb": "file:../",
-    "webmidi": "^3.1.2",
+    "webmidi": "^3.1.4",
     "xterm": "^5.1.0",
     "xterm-addon-fit": "^0.7.0"
   }
