@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 wq
+
+demo/public/js/midi.*
+demo/public/sw.js
+demo/public/workbox-*
