@@ -35,6 +35,7 @@ export class AdbClient implements MessageListener {
   private messageChannel: MessageChannel;
   private messageQueue = new AsyncBlockingQueue<Message>();
   private openStreams: Set<Stream> = new Set();
+  private _onDisconnectCallback!: ((internalVar: string) => void);
 
   /**
    * Creates a new AdbClient
@@ -54,6 +55,18 @@ export class AdbClient implements MessageListener {
 
   unregisterStream(stream: Stream): void {
     this.openStreams.delete(stream);
+  }
+
+  newError(error: string): void {
+    if(this._onDisconnectCallback !== undefined) {
+      this._onDisconnectCallback(error)
+    } else {
+      console.log("AdbClient callback still undefined: ", error)
+    }
+  }
+
+  set onDisconnectCallback(callback: (internalVar: string) => void) {
+    this._onDisconnectCallback = callback;
   }
 
   newMessage(msg: Message): void {

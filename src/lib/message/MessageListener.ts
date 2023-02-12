@@ -18,4 +18,5 @@ import {Message} from './Message';
 
 export interface MessageListener {
   newMessage(msg: Message): void;
+  newError(error: string): void;
 }

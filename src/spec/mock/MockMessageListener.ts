@@ -23,4 +23,8 @@ export class MockMessageListener implements MessageListener {
   newMessage(msg: Message): void {
     this.messageQueue.enqueue(msg);
   }
+
+  newError(): void {
+    return;
+  }
 }

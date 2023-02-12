@@ -33,11 +33,18 @@ export class MessageChannel {
   private async readLoop(): Promise<void> {
     let message: Message;
     do {
-      message = await this.read();
-      if (this.options.debug) {
-        console.log('<<<', message);
+      try {
+        message = await this.read();
+        if (this.options.debug) { console.log('<<<', message); }
+        this.listener.newMessage(message);
+      } catch (error) {
+        if (error instanceof DOMException){
+          // code that runs for this exception.
+          console.log(error)
+          this.listener.newError(error.message)
+        }
+        this.close()
       }
-      this.listener.newMessage(message);
     } while(this.active);
   }
 

@@ -186,6 +186,12 @@ async function sendCommand(cmd: string, newline = true) {
   return true;
 }
 
+function onDisconnect(error: string): void {
+  if(error.includes("transferIn") || error.includes("transferOut")) {
+    disconnect()
+  }
+}
+
 async function connect() {
   try {
     transport = await WebUsbTransport.open(options);
@@ -193,6 +199,7 @@ async function connect() {
     await adbClient.connect();
     term.reset();
     shell = await adbClient.interactiveShell(adbCommandCallback);
+    adbClient.onDisconnectCallback = onDisconnect
 
     disconnectButton.disabled = false;
     connectButton.disabled = true;
