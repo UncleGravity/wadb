@@ -1,6 +1,6 @@
 {
   "name": "@vieratech/wadb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This project is a TypeScript implementation of the Android Debug Bridge(ADB) protocol over WebUSB. The implementation inspired on the [webadb.js][1], with the main difference being that implementation supports multiple concurrent streams.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
